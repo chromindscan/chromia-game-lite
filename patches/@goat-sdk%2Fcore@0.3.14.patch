@@ -1,0 +1,23 @@
+diff --git a/dist/chunk-ZVO4NXO5.js b/dist/chunk-ZVO4NXO5.js
+index 1f63c8a4c9d49e3ed433db61a1a98ed5422ad083..c30983956be6dc27d3ea4250ba6caa4c2a6c778a 100644
+--- a/dist/chunk-ZVO4NXO5.js
++++ b/dist/chunk-ZVO4NXO5.js
+@@ -1 +1,17 @@
+-"use strict";Object.defineProperty(exports, "__esModule", {value: true});var _zod = require('zod');var o="5f16d1545a0881f971b164f1601cbbf51c29efd0633b2730da18c403c3b428b5";function d(){return{name:"send_chr",supportsSmartWallets:()=>!1,supportsChain:e=>e.type==="chromia",getTools:async e=>[{name:"send_chr",description:"This {{tool}} sends CHR to an address on a Chromia chain.",parameters:s,method:n=>i(e,n)}]}}var s=_zod.z.object({to:_zod.z.string().describe("The address to send CHR to"),amount:_zod.z.string().describe("The amount of CHR to send")});async function i(e,n){try{let{to:t,amount:a}=n;return await e.sendTransaction({to:t,assetId:o,amount:a}),`CHR sent to ${t} with amount ${a}`}catch(t){return`Error sending CHR: ${t}`}}exports.a = o; exports.b = d;
++"use strict";
++Object.defineProperty(exports, "__esModule", { value: true }); 
++
++var _zod = require('zod');
++var o = "5f16d1545a0881f971b164f1601cbbf51c29efd0633b2730da18c403c3b428b5";
++function d() { return { name: "send_chr", supportsSmartWallets: () => !1, supportsChain: e => e.type === "chromia", getTools: async e => [{ name: "send_chr", description: "This {{tool}} sends CHR to an address on a Chromia chain.", parameters: s, method: n => i(e, n) }] } } var s = _zod.z.object({ to: _zod.z.string().describe("The address to send CHR to"), amount: _zod.z.string().describe("The amount of CHR to send") });
++async function i(e, n) { 
++    try {
++        let { to: t, amount: a } = n; 
++        var {receipt} = await e.sendTransaction({ to: t, assetId: o, amount: a }); 
++        return `https://explorer.chromia.com/mainnet/15C0CA99BEE60A3B23829968771C50E491BD00D2E3AE448580CD48A8D71E7BBA/transaction/${receipt.transactionRid.toString("hex")}`;
++    } catch (t) {
++        return `Error sending CHR: ${t}`;
++    }
++}
++exports.a = o;
++exports.b = d;

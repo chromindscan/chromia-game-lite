@@ -1,0 +1,24 @@
+{
+  "name": "chromia-game-lite",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/express": "^5.0.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@ai-sdk/openai": "^1.0.8",
+    "@chromia/ft4": "^1.0.1",
+    "@goat-sdk/adapter-vercel-ai": "^0.1.8",
+    "@goat-sdk/wallet-chromia": "^0.1.6",
+    "ai": "^4.0.18",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  },
+  "patchedDependencies": {
+    "@goat-sdk/core@0.3.14": "patches/@goat-sdk%2Fcore@0.3.14.patch"
+  }
+}
