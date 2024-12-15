@@ -40,9 +40,10 @@ ngrok http http://localhost:3000
 
 ## Production Guide
 
-1. Set Environment Variables:
+1. Setup:
    - Set `NODE_ENV=production`
    - Set `SERVER_SECRET_KEY` with a secure random string
+   - Set the `prodAllowedIps` to support Virtuals' IP
    
 2. Configure Application:
    - Update `game-lite.json` with your production `SERVER_SECRET_KEY` settings

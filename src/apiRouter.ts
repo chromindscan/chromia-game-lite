@@ -13,12 +13,12 @@ router.use(express.json());
 router.use(secretKeyMiddleware);
 router.use(ipMiddleware);
 
-// curl -X GET -H "Content-Type: application/json" -H "x-secret-key: test" -H "x-ip: 127.0.0.1" http://localhost:3000/api/v1/
+// curl -X GET -H "Content-Type: application/json" -H "x-secret-key: test" http://localhost:3000/api/v1/
 router.route("/").get((req, res) => {
   res.send("Hello World");
 });
 
-// curl -X GET -H "Content-Type: application/json" -H "x-secret-key: test" -H "x-ip: 127.0.0.1" http://localhost:3000/api/v1/balance?address=73863faabbd82574357f0dbe934ba812e5b2d72e98e590345d1fb29ac5aa0d0c
+// curl -X GET -H "Content-Type: application/json" -H "x-secret-key: test" http://localhost:3000/api/v1/balance?address=73863faabbd82574357f0dbe934ba812e5b2d72e98e590345d1fb29ac5aa0d0c
 router.route("/balance").get(async (req, res) => {
   const { address } = req.query;
   const {connection} = await setupChromia();
@@ -41,7 +41,7 @@ router.route("/balance").get(async (req, res) => {
   });
 });
 
-// curl -X POST -H "Content-Type: application/json" -H "x-secret-key: test" -H "x-ip: 127.0.0.1" -d '{"prompt":"Send 0.001CHR to xyz account"}' http://localhost:3000/api/v1/send-chr
+// curl -X POST -H "Content-Type: application/json" -H "x-secret-key: test" -d '{"prompt":"Send 0.001CHR to xyz account"}' http://localhost:3000/api/v1/send-chr
 router.route("/send-chr").post(async (req, res) => {
   const { prompt } = req.body;
   const tools = await setupGoatAI();
