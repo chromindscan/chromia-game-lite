@@ -2,6 +2,9 @@
 
 This is a sample express server that you can deploy functions for G.A.M.E lite for an AI Agent to send $CHR out
 
+![telegram-cloud-photo-size-5-6267250037222393690-y](https://github.com/user-attachments/assets/03aa191b-612f-42c2-ab02-c197cd5c0c4e)
+
+
 ## Guide
 
 To install dependencies:
