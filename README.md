@@ -1,5 +1,5 @@
 # Chromia G.A.M.E Lite Server
-A sample Express.js server implementation that enables $CHR (on Chromia Chain) transactions through Virtuals.io G.A.M.E Lite integration. This server allows AI agents to send $CHR tokens.
+A server implementation that enables $CHR token transactions on the Chromia blockchain through Virtuals.io G.A.M.E Lite integration. This server provides the infrastructure for AI agents to send $CHR tokens.
 
 ![telegram-cloud-photo-size-5-6267250037222393690-y](https://github.com/user-attachments/assets/03aa191b-612f-42c2-ab02-c197cd5c0c4e)
 
@@ -48,20 +48,24 @@ ngrok http http://localhost:3000
    - Use the tweet ID to simulate the AI Agent's response
 
 
-## How to add your own function
-
-This repo supports Swagger JSON.
-
-So on the swagger file:
+## Adding Custom Functions
+The project uses Swagger for API documentation. Add new endpoints using the following format:
 
 ```
-@swagger
-/endpoint:
-    get
-        name: FUNCTION_NAME
-        summary: FUNCTION_DESCRIPTION
-        description: HINT
-        game_lite_supported: true (set it to false to not be included)
+/**
+ * @swagger
+ * /endpoint:
+ *     get
+ *         name: FUNCTION_NAME
+ *         summary: FUNCTION_DESCRIPTION
+ *         description: HINT
+ *         game_lite_supported: true (set it to false to not be included)
+ **/
+```
+
+Generate updated G.A.M.E Lite configuration:
+```bash
+bun run script/generateGameLite.ts
 ```
 
 ## Production Guide
@@ -83,3 +87,11 @@ So on the swagger file:
 4. Security Considerations:
    - Keep your `SERVER_SECRET_KEY` secure and never commit it to version control
    - Regularly rotate security credentials
+
+
+## Security Considerations
+
+- Protect the SERVER_SECRET_KEY
+- Implement IP allowlisting
+- Use HTTPS for all connections
+- Implement rate limiting

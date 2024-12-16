@@ -1,7 +1,7 @@
 {
   "customFunctions": [
     {
-      "id": "3fbffef6-303e-4744-8c82-bf53392a5dfc",
+      "id": "e4f02c00-68be-4bcb-bba4-263a33e7d979",
       "fn_name": "health_check",
       "fn_description": "Returns a simple \"Hello World\" message to verify the API is running",
       "args": [],
@@ -23,12 +23,12 @@
       }
     },
     {
-      "id": "c3d78165-3b41-4877-9799-bea4d6c15540",
+      "id": "6d58e522-497a-42c2-8eb4-152d14fb3580",
       "fn_name": "get_chr_balance",
       "fn_description": "Retrieves the CHR token balance for a specified blockchain address",
       "args": [
         {
-          "id": "81eb4e19-52e7-4bee-94ff-e8cc2bd2e710",
+          "id": "deb8faa8-7a36-4d72-af7b-1b4d6fe56852",
           "name": "address",
           "description": "The blockchain address to check the balance for",
           "type": "string"
@@ -54,12 +54,12 @@
       }
     },
     {
-      "id": "0d7b7c04-6942-4302-bd35-364f0cfa6f3f",
+      "id": "1ac268ac-aa5d-40a7-b331-0d678d71c119",
       "fn_name": "send_chr",
       "fn_description": "Processes a natural language prompt to send CHR tokens",
       "args": [
         {
-          "id": "a9f38b22-e264-4214-9d63-08834d2331c0",
+          "id": "f9618a20-0aa5-4263-94ae-56dc542a8056",
           "name": "prompt",
           "description": "Natural language prompt describing the transaction",
           "type": "string"
