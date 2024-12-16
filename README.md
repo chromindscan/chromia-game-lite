@@ -4,7 +4,7 @@ A server implementation that enables $CHR token transactions on the Chromia bloc
 ![telegram-cloud-photo-size-5-6267250037222393690-y](https://github.com/user-attachments/assets/03aa191b-612f-42c2-ab02-c197cd5c0c4e)
 
 ## Overview
-This repository provides a server-side implementation for integrating with Virtuals.io G.A.M.E (Generative Autonomous Multimodal Entities) Lite. It demonstrates how to set up endpoints that allow AI agents to initiate $CHR token transfers.
+This repository provides a server-side implementation for integrating with Virtuals.io G.A.M.E (Generative Autonomous Multimodal Entities) Lite. It demonstrates how to set up endpoints that allow AI agents to initiate $CHR token transfers. Use this as a template to build your own G.A.M.E-enabled applications!
 
 ## Use Cases
 - Automated tipping system for content creators
