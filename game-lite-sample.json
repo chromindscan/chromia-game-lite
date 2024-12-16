@@ -1,0 +1,42 @@
+{
+  "customFunctions": [
+    {
+      "id": "61a679ec-bf18-4a70-b182-0847afb0044f",
+      "fn_name": "send_chr",
+      "fn_description": "Send a instruction to send $CHR to a specific address",
+      "args": [
+        {
+          "id": "61a679ec-bf18-4a70-b182-0847afb0044f",
+          "name": "instruction",
+          "description": "Send a text instruction to send $CHR to a specific address. e.g. 'Send 0.001 $CHR to {}'",
+          "type": "string"
+        }
+      ],
+      "hint": "Returns the result of the transaction",
+      "config": {
+        "method": "post",
+        "url": "http://localhost:3000/api/v1/send-chr",
+        "headers": {
+          "Content-Type": "application/json",
+          "x-secret-key": "test"
+        },
+        "payload": {
+          "prompt": "{{instruction}}"
+        },
+        "success_feedback": "{{response.message}}\nFull result: {{response.result}}",
+        "error_feedback": "Failed to generate text",
+        "headersString": "{\n  \"Content-Type\": \"application/json\",\n  \"x-secret-key\": \"test\",\n  \"x-ip\": \"127.0.0.1\"\n}",
+        "payloadString": "{\n  \"prompt\": \"{{prompt}}\"\n}",
+        "isMainLoop": true,
+        "isReaction": false
+      }
+    }
+  ],
+  "description": "",
+  "functions": [
+    "send_chr"
+  ],
+  "goal": "",
+  "locationIds": [],
+  "worldInfo": ""
+}

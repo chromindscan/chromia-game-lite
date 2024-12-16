@@ -2,9 +2,14 @@
   "name": "chromia-game-lite",
   "module": "index.ts",
   "type": "module",
+  "scripts": {
+    "format": "prettier --write \"src/**/*.ts\" \"script/**/*.ts\""
+  },
   "devDependencies": {
     "@types/bun": "latest",
-    "@types/express": "^5.0.0"
+    "@types/express": "^5.0.0",
+    "@types/swagger-jsdoc": "^6.0.4",
+    "@types/swagger-ui-express": "^4.1.7"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
@@ -16,7 +21,11 @@
     "@goat-sdk/wallet-chromia": "^0.1.6",
     "ai": "^4.0.18",
     "dotenv": "^16.4.7",
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "prettier": "^3.4.2",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "uuid": "^11.0.3"
   },
   "patchedDependencies": {
     "@goat-sdk/core@0.3.14": "patches/@goat-sdk%2Fcore@0.3.14.patch"

@@ -38,6 +38,22 @@ ngrok http http://localhost:3000
    - Use the tweet ID to simulate the AI Agent's response
 
 
+## How to add your own function
+
+This repo supports Swagger JSON.
+
+So on the swagger file:
+
+```
+@swagger
+/endpoint:
+    get
+        name: FUNCTION_NAME
+        summary: FUNCTION_DESCRIPTION
+        description: HINT
+        game_lite_supported: true (set it to false to not be included)
+```
+
 ## Production Guide
 
 1. Setup:

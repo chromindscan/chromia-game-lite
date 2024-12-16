@@ -1,21 +1,21 @@
 {
   "customFunctions": [
     {
-      "id": "61a679ec-bf18-4a70-b182-0847afb0044f",
-      "fn_name": "send_chr",
-      "fn_description": "Send a instruction to send $CHR to a specific address",
+      "id": "6def13d3-bc4b-496e-8b17-ed52fdc837d9",
+      "fn_name": "health_check",
+      "fn_description": "Returns a simple \"Hello World\" message to verify the API is running",
       "args": [
         {
-          "id": "61a679ec-bf18-4a70-b182-0847afb0044f",
+          "id": "4e3c7040-8366-47f5-a958-5b25582f72f3",
           "name": "instruction",
-          "description": "Send a text instruction to send $CHR to a specific address. e.g. 'Send 0.001 $CHR to {}'",
+          "description": "Instruction for health_check",
           "type": "string"
         }
       ],
-      "hint": "Returns the result of the transaction",
+      "hint": "Basic health check endpoint",
       "config": {
         "method": "post",
-        "url": "http://localhost:3000/api/v1/send-chr",
+        "url": "http://localhost:3000/",
         "headers": {
           "Content-Type": "application/json",
           "x-secret-key": "test"
@@ -24,7 +24,69 @@
           "prompt": "{{instruction}}"
         },
         "success_feedback": "{{response.message}}\nFull result: {{response.result}}",
-        "error_feedback": "Failed to generate text",
+        "error_feedback": "Failed to execute operation",
+        "headersString": "{\n  \"Content-Type\": \"application/json\",\n  \"x-secret-key\": \"test\",\n  \"x-ip\": \"127.0.0.1\"\n}",
+        "payloadString": "{\n  \"prompt\": \"{{prompt}}\"\n}",
+        "isMainLoop": true,
+        "isReaction": false
+      }
+    },
+    {
+      "id": "d2334460-88be-4cb5-bf83-ed79c9282d73",
+      "fn_name": "get_chr_balance",
+      "fn_description": "Retrieves the CHR token balance for a specified blockchain address",
+      "args": [
+        {
+          "id": "f25f1fb1-435e-4c11-b836-d14d8b691eea",
+          "name": "instruction",
+          "description": "Instruction for get_chr_balance",
+          "type": "string"
+        }
+      ],
+      "hint": "Get account balance",
+      "config": {
+        "method": "post",
+        "url": "http://localhost:3000/balance",
+        "headers": {
+          "Content-Type": "application/json",
+          "x-secret-key": "test"
+        },
+        "payload": {
+          "prompt": "{{instruction}}"
+        },
+        "success_feedback": "{{response.message}}\nFull result: {{response.result}}",
+        "error_feedback": "Failed to execute operation",
+        "headersString": "{\n  \"Content-Type\": \"application/json\",\n  \"x-secret-key\": \"test\",\n  \"x-ip\": \"127.0.0.1\"\n}",
+        "payloadString": "{\n  \"prompt\": \"{{prompt}}\"\n}",
+        "isMainLoop": true,
+        "isReaction": false
+      }
+    },
+    {
+      "id": "30f996a9-5ef3-4624-8a74-7690c8d7b035",
+      "fn_name": "send_chr",
+      "fn_description": "Processes a natural language prompt to send CHR tokens",
+      "args": [
+        {
+          "id": "3f463beb-eff6-4e96-b8bd-aff345dd13dd",
+          "name": "instruction",
+          "description": "Instruction for send_chr",
+          "type": "string"
+        }
+      ],
+      "hint": "Send CHR tokens",
+      "config": {
+        "method": "post",
+        "url": "http://localhost:3000/send-chr",
+        "headers": {
+          "Content-Type": "application/json",
+          "x-secret-key": "test"
+        },
+        "payload": {
+          "prompt": "{{instruction}}"
+        },
+        "success_feedback": "{{response.message}}\nFull result: {{response.result}}",
+        "error_feedback": "Failed to execute operation",
         "headersString": "{\n  \"Content-Type\": \"application/json\",\n  \"x-secret-key\": \"test\",\n  \"x-ip\": \"127.0.0.1\"\n}",
         "payloadString": "{\n  \"prompt\": \"{{prompt}}\"\n}",
         "isMainLoop": true,
@@ -34,6 +96,8 @@
   ],
   "description": "",
   "functions": [
+    "health_check",
+    "get_chr_balance",
     "send_chr"
   ],
   "goal": "",
