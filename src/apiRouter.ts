@@ -39,15 +39,26 @@ router.use(ipMiddleware);
  *       200:
  *         description: Successful response
  *         content:
- *           text/plain:
+ *           application/json:
  *             schema:
- *               type: string
- *               example: "Hello World"
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   description: Whether the operation was successful
+ *                   example: true
+ *                 message:
+ *                   type: string
+ *                   description: Response message
+ *                   example: "Hello World"
  *       401:
  *         description: Unauthorized - Invalid or missing secret key
  */
 router.route("/").get((req, res) => {
-  res.send("Hello World");
+  res.json({
+    success: true,
+    message: "Hello World",
+  });
 });
 
 /**
