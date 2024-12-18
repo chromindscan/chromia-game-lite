@@ -1,6 +1,5 @@
 import { getOnChainTools } from "@goat-sdk/adapter-vercel-ai";
-import { chromia } from "@goat-sdk/wallet-chromia";
-import { sendCHR } from "@goat-sdk/core";
+import { chromia, sendCHR } from "@goat-sdk/wallet-chromia";
 import { setupChromia } from "./chromia";
 
 export const setupGoatAI = async () => {
